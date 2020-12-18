@@ -9,9 +9,8 @@ def unirDosStrings(String param1, String param2){
 
 def mostrarNombre(){
 	def request = libraryResource 'org/cl/nombres.json'
-	def json    = readJSON file: request
 
-	println json
+	println request
 }
 
 return this;
