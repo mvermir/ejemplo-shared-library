@@ -12,21 +12,26 @@ def call(String param1, String param2){
             stage('Pipeline'){
                 steps{
                     script{
+                        try {
+                            
+                            def funciones   = new Funciones()
 
-                        def funciones   = new Funciones()
+                            stage('Inicio'){
+                                println 'Inicio'
+                                println 'String 1: ' + param1
+                                println 'String 2: ' + param2
+                            }
 
-                        stage('Inicio'){
-                            println 'Inicio'
-                            println 'String 1: ' + param1
-                            println 'String 2: ' + param2
-                        }
+                            stage('Union'){
+                                println 'Union de 2 Strings: ' + funciones.unirDosStrings(param1, param2)          
+                            }
 
-                        stage('Union'){
-                            println 'Union de 2 Strings: ' + funciones.unirDosStrings(param1, param2)          
-                        }
+                            stage('MostrarNombre'){
+                                println 'Nombre obtenido desde Json: ' + funciones.mostrarNombre()
+                            }
 
-                        stage('MostrarNombre'){
-                            println 'Nombre obtenido desde Json: ' + funciones.mostrarNombre()
+                        } catch(Exception e) {
+                            error ('Ha ocurrido el siguiente error: ' + e)
                         }
                     }
                 }
