@@ -7,6 +7,7 @@ def call(String param1, String param2){
     println 'Ejecución de Pipeline'
 
     pipeline{
+        agent any
         stages{
             stage('Pipeline'){
                 steps{
