@@ -11,7 +11,7 @@ def mostrarNombre(){
 	def request = libraryResource 'org/cl/nombres.json'
 	def json    = readJSON text: request
 
-	println json.name
+	return json.nombre
 }
 
 return this;
