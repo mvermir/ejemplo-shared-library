@@ -3,23 +3,15 @@
 //Classpath
 package org.cl
 
-
-//Script
-
 def unirDosStrings(String param1, String param2){
 	return param1 + param2
 }
 
-return this;
+def mostrarNombre(){
+	def request = libraryResource 'org/cl/nombres.json'
+	def json    = readJSON file: request
 
-/* Clase
-
-class Funciones {
-
-	def implementacion(String param1, String param2){
-		return param1 + param2
-	}
-
-	//Escribir código con notación parecida a Java.
+	return json.nombre
 }
-*/
+
+return this;
