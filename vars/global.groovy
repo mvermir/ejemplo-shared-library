@@ -13,13 +13,15 @@ def call(String param1, String param2){
                 steps{
                     script{
                         try {
-                            
+
                             def funciones   = new Funciones()
 
                             stage('Inicio'){
                                 println 'Inicio'
                                 println 'String 1: ' + param1
                                 println 'String 2: ' + param2
+
+                                gradle.call()
                             }
 
                             stage('Union'){
